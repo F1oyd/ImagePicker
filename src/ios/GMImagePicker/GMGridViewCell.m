@@ -133,6 +133,11 @@ static UIColor *disabledColor;
 //        [self.circularProgressView.stopButton addTarget:self action:@selector(onCircularProgressViewTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
 //        [self.circularProgressView setHidden:true];
 //        [self addSubview:self.circularProgressView];
+
+        _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        _spinner.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2 );
+        [_spinner startAnimating];
+        [self addSubview:_spinner];
         
         
         _fetch = [UILabel new];
@@ -150,10 +155,12 @@ static UIColor *disabledColor;
 
 -(void)show_progress{
 //    [self.circularProgressView setHidden:false];
+    [_activityView setAlpha:1];
 }
 
 -(void)hide_progress{
 //    [self.circularProgressView setHidden:true];
+    [_activityView setAlpha:0];
 }
 
 -(void)set_progress:(float)value animated:(BOOL)animated{
