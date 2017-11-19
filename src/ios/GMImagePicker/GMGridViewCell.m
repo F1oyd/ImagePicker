@@ -155,12 +155,12 @@ static UIColor *disabledColor;
 
 -(void)show_progress{
 //    [self.circularProgressView setHidden:false];
-    [_activityView setAlpha:1];
+    [_spinner setAlpha:1];
 }
 
 -(void)hide_progress{
 //    [self.circularProgressView setHidden:true];
-    [_activityView setAlpha:0];
+    [_spinner setAlpha:0];
 }
 
 -(void)set_progress:(float)value animated:(BOOL)animated{
